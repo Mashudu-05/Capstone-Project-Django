@@ -4,17 +4,41 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 
-# Homepage view — shows all available dresses
 def home(request):
-    dresses= dresses.objects.filter(available=True)
+    """
+    Display all available dresses on the homepage.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        HttpResponse: Rendered homepage with available dresses.
+    """
+    dresses = Dress.objects.filter(available=True)
     return render(request, 'rentals/home.html', {'dresses': dresses})
 
 def about(request):
+    """
+    Display the static About page.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        HttpResponse: Rendered About page.
+    """
     return render(request, 'rentals/about.html')
 
-
-# User Registration View
 def register(request):
+    """
+    Handle user registration using Django's built-in UserCreationForm.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        HttpResponse: Rendered registration form or redirect on success.
+    """
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -24,8 +48,16 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'rentals/register.html', {'form': form})
 
-# User Login View
 def login_view(request):
+    """
+    Authenticate and log in the user.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        HttpResponse: Rendered login form or redirect on successful login.
+    """
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -39,7 +71,15 @@ def login_view(request):
         form = AuthenticationForm()
     return render(request, 'rentals/login.html', {'form': form})
 
-# Logout View
 def logout_view(request):
+    """
+    Log out the current user and redirect to the login page.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        HttpResponse: Redirect to login page after logout.
+    """
     logout(request)
     return redirect('rentals:login')  
