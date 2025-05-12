@@ -1,0 +1,52 @@
+/* rentals/static/rentals/styles.css */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fdfdfd;
+    padding: 20px;
+}
+
+h1 {
+    color: #bb265e;
+}
+
+img {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+    background-color: #fff8f5;
+    border-left: 6px solid #bb265e;
+}
+
+.about-section h1 {
+    color: #bb265e;
+    font-weight: 700;
+}
+
+.about-section ul {
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.contact-section {
+    background-color: #fdf9f7;
+    border-left: 5px solid #bb265e;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #bb265e;
+    box-shadow: 0 0 0 0.2rem rgba(187, 38, 94, 0.2);
+}
+

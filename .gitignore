@@ -1,0 +1,71 @@
+# ───────────────────────────────
+# OS-specific files
+# ───────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ───────────────────────────────
+# Python
+# ───────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pot
+*.mo
+*.sqlite3
+*.db
+*.log
+*.env
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Python virtual environment
+venv/
+env/
+ENV/
+
+# ───────────────────────────────
+# Node.js
+# ───────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ───────────────────────────────
+# Logs
+# ───────────────────────────────
+logs/
+*.log
+*.log.*
+
+# ───────────────────────────────
+# Environment files
+# ───────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ───────────────────────────────
+# Build output
+# ───────────────────────────────
+dist/
+build/
+out/
+
+# ───────────────────────────────
+# IDE/editor specific
+# ───────────────────────────────
+.vscode/
+.idea/
+*.iml
+
+# ───────────────────────────────
+# Temporary files
+# ───────────────────────────────
+*.tmp
+*.temp
+*.cache
+*.lock

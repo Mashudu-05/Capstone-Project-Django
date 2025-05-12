@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome to Vogue Maternity Dress Rentals!</h1>
+
+{% if user.is_authenticated %}
+  <p class="text-success">Welcome {{ user.username }}! You are logged in.</p>
+{% else %}
+  <p>Please log in or register to start renting.</p>
+{% endif %}
+
+<h2 class="mt-4">Available Dresses</h2>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+  {% for dress in dresses %}
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      <img src="{{ dress.image.url }}" class="card-img-top" alt="{{ dress.name }}" style="max-height: 300px; object-fit: cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{ dress.name }}</h5>
+        <p class="card-text">{{ dress.description }}</p>
+      </div>
+      <div class="card-footer">
+        <strong>R{{ dress.price_per_day }}</strong> per day
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+    
+
