@@ -29,6 +29,9 @@ def about(request):
     """
     return render(request, 'rentals/about.html')
 
+def contact(request):
+    return render(request, 'rentals/contact.html')
+
 def register(request):
     """
     Handle user registration using Django's built-in UserCreationForm.
