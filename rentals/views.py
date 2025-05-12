@@ -6,12 +6,14 @@ from django.contrib.auth import login, logout, authenticate
 
 # Homepage view — shows all available dresses
 def home(request):
-    dresses= dresses.objects.filter(available=True)
+    dresses = Dress.objects.filter(available=True)
     return render(request, 'rentals/home.html', {'dresses': dresses})
 
 def about(request):
     return render(request, 'rentals/about.html')
 
+def contact(request):
+    return render(request, 'rentals/contact.html')
 
 # User Registration View
 def register(request):
